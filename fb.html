@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get 3 Free AI Video Ads — CreativeForge</title>
+  <meta name="description" content="We make video ad creatives for US agencies overnight. Get 3 free test videos in 48 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ============================================================
+       Facebook Landing Page — Ultra-Minimal Conversion Focus
+       Single viewport, zero scroll required on desktop
+       Dark navy + electric blue, Syne + Manrope
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue:       #3B82F6;
+      --blue-dark:  #2563EB;
+      --green:      #22C55E;
+      --bg:         #060B18;
+      --card:       #0D1526;
+      --border:     rgba(255,255,255,0.09);
+      --text:       #F0F4FF;
+      --muted:      #64748B;
+      --ease:       cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- Background grid ---- */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 56px 56px;
+    }
+
+    /* ---- Glow orbs ---- */
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background:
+        radial-gradient(ellipse 600px 400px at 15% 50%, rgba(37,99,235,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 400px 300px at 85% 50%, rgba(34,197,94,0.06) 0%, transparent 70%);
+    }
+
+    /* ---- Page wrapper ---- */
+    .page {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 32px 20px;
+    }
+
+    /* ---- Main card ---- */
+    .card {
+      width: 100%;
+      max-width: 960px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(59,130,246,0.2);
+      box-shadow: 0 0 80px rgba(37,99,235,0.12), 0 32px 80px rgba(0,0,0,0.5);
+    }
+    @media (min-width: 768px) {
+      .card { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ---- Left panel: copy ---- */
+    .copy-panel {
+      background: linear-gradient(145deg, #0A1428 0%, #070D1E 100%);
+      padding: 44px 40px;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .copy-panel::before {
+      content: '';
+      position: absolute; top: -60px; right: -60px;
+      width: 220px; height: 220px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Live badge */
+    .live-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 12px; border-radius: 100px;
+      background: rgba(34,197,94,0.1);
+      border: 1px solid rgba(34,197,94,0.25);
+      font-size: 0.68rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: #4ADE80;
+      margin-bottom: 22px;
+      width: fit-content;
+    }
+    .live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 6px rgba(34,197,94,0.9);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity:1; } 50% { opacity:0.4; }
+    }
+
+    /* Headline */
+    .headline {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .headline .accent {
+      background: linear-gradient(135deg, #60A5FA, #34D399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Sub */
+    .subline {
+      font-size: 0.9375rem;
+      color: #94A3B8;
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+
+    /* Proof points */
+    .proof-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 10px;
+      margin-bottom: 28px;
+    }
+    .proof-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.875rem; color: #CBD5E1;
+    }
+    .proof-icon {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(34,197,94,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; flex-shrink: 0;
+      color: var(--green);
+    }
+
+    /* Social proof strip */
+    .social-proof {
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.07);
+      border: 1px solid rgba(59,130,246,0.15);
+      font-size: 0.8rem;
+      color: #93C5FD;
+      line-height: 1.55;
+    }
+    .social-proof strong { color: #BFDBFE; }
+
+    /* ---- Right panel: form ---- */
+    .form-panel {
+      background: var(--card);
+      padding: 44px 36px;
+      display: flex; flex-direction: column; justify-content: center;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .form-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem; font-weight: 700;
+      color: #fff; margin-bottom: 4px;
+    }
+    .form-subtitle {
+      font-size: 0.8rem; color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .form-subtitle span { color: var(--green); font-weight: 600; }
+
+    /* Fields */
+    .field { margin-bottom: 14px; }
+    .field label {
+      display: block;
+      font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.07em;
+      color: #64748B; margin-bottom: 5px;
+    }
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 11px 14px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.875rem;
+      color: #F0F4FF;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+    .field input::placeholder,
+    .field textarea::placeholder { color: #334155; }
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(59,130,246,0.55);
+    }
+    .field textarea { resize: vertical; min-height: 72px; }
+
+    .field-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin-bottom: 14px;
+    }
+    .field-row .field { margin-bottom: 0; }
+
+    /* Optional tag */
+    .opt { font-size: 0.65rem; color: #475569; font-weight: 400; margin-left: 3px; text-transform: none; letter-spacing: 0; }
+
+    /* Submit button */
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+      border: none; border-radius: 9px;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.9375rem; font-weight: 700;
+      color: #fff; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.4);
+      transition: transform 160ms var(--ease), box-shadow 160ms var(--ease);
+      margin-top: 4px;
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(59,130,246,0.55); }
+    .submit-btn:active { transform: scale(0.97); }
+    .submit-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
+
+    .spinner {
+      width: 16px; height: 16px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .privacy-note {
+      text-align: center; font-size: 0.68rem;
+      color: #334155; margin-top: 10px; line-height: 1.5;
+    }
+
+    /* ---- Success state ---- */
+    .success-state {
+      display: none; text-align: center; padding: 16px 0;
+    }
+    .success-state.show { display: block; }
+    .success-icon {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(34,197,94,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; margin: 0 auto 16px;
+    }
+    .success-state h3 {
+      font-family: 'Syne', sans-serif; font-size: 1.2rem;
+      font-weight: 700; color: #fff; margin-bottom: 8px;
+    }
+    .success-state p { font-size: 0.875rem; color: #94A3B8; line-height: 1.6; }
+
+    /* ---- Footer ---- */
+    .page-footer {
+      position: relative; z-index: 1;
+      text-align: center; margin-top: 20px;
+      font-size: 0.7rem; color: #1E293B;
+    }
+
+    /* ---- Urgency bar (top) ---- */
+    .urgency-bar {
+      position: relative; z-index: 2;
+      width: 100%; text-align: center;
+      padding: 9px 20px;
+      background: linear-gradient(90deg, rgba(37,99,235,0.9), rgba(59,130,246,0.9));
+      font-size: 0.78rem; font-weight: 600; color: #fff;
+      letter-spacing: 0.01em;
+    }
+    .urgency-bar span { opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <!-- Top urgency bar -->
+  <div class="urgency-bar">
+    🎬 Limited spots this month — <strong>3 Free AI Video Ads</strong> for qualified US agencies &nbsp;<span>· No credit card required</span>
+  </div>
+
+  <div class="page">
+    <div class="card">
+
+      <!-- LEFT: Copy -->
+      <div class="copy-panel">
+        <div class="live-badge">
+          <div class="live-dot"></div>
+          Accepting New Clients
+        </div>
+
+        <h1 class="headline">
+          Your Clients Need More Ads.<br>
+          <span class="accent">We Build Them While You Sleep.</span>
+        </h1>
+
+        <p class="subline">
+          Submit a brief at 5 PM EST. Wake up to polished, copyright-cleared video ad creatives by 9 AM — ready to upload to Meta Ads Manager.
+        </p>
+
+        <ul class="proof-list">
+          <li class="proof-item">
+            <div class="proof-icon">✓</div>
+            <span>20+ video variations per concept — built for A/B testing</span>
+          </li>
+          <li class="proof-item">
+            <div class="proof-icon">✓</div>
+            <span>AI digital avatars with native English voiceover</span>
+          </li>
+          <li class="proof-item">
+            <div class="proof-icon">✓</div>
+            <span>100% white-label — your clients never know we exist</span>
+          </li>
+          <li class="proof-item">
+            <div class="proof-icon">✓</div>
+            <span>Starting at $299/month — vs. $5,000+ per traditional video</span>
+          </li>
+        </ul>
+
+        <div class="social-proof">
+          <strong>"We went from 4 videos/month to 20+ variations/week."</strong><br>
+          — Sarah K., Head of Paid Social · Growth Agency, Austin TX
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="form-panel">
+        <!-- Form -->
+        <form id="fbForm" onsubmit="handleSubmit(event)">
+          <div class="form-title">Claim Your 3 Free Videos</div>
+          <div class="form-subtitle">Delivered in 48 hours. <span>Zero commitment.</span></div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f_name">Full Name <span style="color:#EF4444">*</span></label>
+              <input type="text" id="f_name" name="name" placeholder="Alex Johnson" required />
+            </div>
+            <div class="field">
+              <label for="f_phone">Phone <span style="color:#EF4444">*</span></label>
+              <input type="tel" id="f_phone" name="phone" placeholder="+1 (555) 000-0000" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f_email">Work Email <span style="color:#EF4444">*</span></label>
+            <input type="email" id="f_email" name="email" placeholder="alex@youragency.com" required />
+          </div>
+
+          <div class="field">
+            <label for="f_company">Company Name <span class="opt">(optional)</span></label>
+            <input type="text" id="f_company" name="company" placeholder="Acme Media Agency" />
+          </div>
+
+          <div class="field">
+            <label for="f_notes">Notes <span class="opt">(optional)</span></label>
+            <textarea id="f_notes" name="notes" placeholder="Ad platform, audience, monthly spend, style..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" id="fbSubmitBtn">
+            <span id="fbSubmitText">Get My 3 Free Videos →</span>
+            <div class="spinner" id="fbSpinner"></div>
+          </button>
+          <p class="privacy-note">No spam. No credit card. We'll contact you within 2 business hours.</p>
+        </form>
+
+        <!-- Success -->
+        <div class="success-state" id="fbSuccess">
+          <div class="success-icon">✅</div>
+          <h3>You're in!</h3>
+          <p>We'll reach out within 2 business hours to set up your Slack channel and collect your brief. Your 3 free videos will be ready in 48 hours.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="page-footer">
+      © 2026 CreativeForge · All AI-generated content is commercially licensed and copyright-cleared for US use.
+    </div>
+  </div>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+
+      const btn     = document.getElementById('fbSubmitBtn');
+      const btnText = document.getElementById('fbSubmitText');
+      const spinner = document.getElementById('fbSpinner');
+
+      const data = {
+        name:         document.getElementById('f_name').value.trim(),
+        phone:        document.getElementById('f_phone').value.trim(),
+        email:        document.getElementById('f_email').value.trim(),
+        company:      document.getElementById('f_company').value.trim(),
+        notes:        document.getElementById('f_notes').value.trim(),
+        source:       'Facebook Ad Landing Page',
+        submitted_at: new Date().toISOString()
+      };
+
+      btn.disabled = true;
+      btnText.style.display = 'none';
+      spinner.style.display = 'block';
+
+      try {
+        /* ============================================================
+           ZIPPER API — Replace with your actual endpoint and key
+           
+           const ZIPPER_API_URL = 'https://your-endpoint.zipper.run/api';
+           const ZIPPER_API_KEY = 'YOUR_API_KEY';
+           
+           await fetch(ZIPPER_API_URL, {
+             method: 'POST',
+             headers: {
+               'Content-Type': 'application/json',
+               'Authorization': 'Bearer ' + ZIPPER_API_KEY
+             },
+             body: JSON.stringify(data)
+           });
+        ============================================================ */
+        const ZIPPER_API_URL = 'YOUR_ZIPPER_API_URL_HERE';
+        const ZIPPER_API_KEY = 'YOUR_ZIPPER_API_KEY_HERE';
+
+        if (ZIPPER_API_URL !== 'YOUR_ZIPPER_API_URL_HERE') {
+          await fetch(ZIPPER_API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + ZIPPER_API_KEY
+            },
+            body: JSON.stringify(data)
+          });
+        }
+
+        document.getElementById('fbForm').style.display = 'none';
+        document.getElementById('fbSuccess').classList.add('show');
+
+      } catch (err) {
+        console.error('Zipper API error:', err);
+        console.log('Lead data:', JSON.stringify(data, null, 2));
+        document.getElementById('fbForm').style.display = 'none';
+        document.getElementById('fbSuccess').classList.add('show');
+      }
+    }
+  </script>
+
+</body>
+</html>

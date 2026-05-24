@@ -175,9 +175,9 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(135deg,
-        rgba(6,11,24,0.92) 0%,
-        rgba(6,11,24,0.75) 50%,
-        rgba(6,11,24,0.88) 100%);
+        rgba(6,11,24,0.70) 0%,
+        rgba(6,11,24,0.45) 50%,
+        rgba(6,11,24,0.65) 100%);
     }
     .hero-glow {
       position: absolute; inset: 0; pointer-events: none;
@@ -1475,26 +1475,16 @@
     spinner.style.display = 'inline-block';
 
     try {
-      /* ============================================================
-         ZIPPER API — Replace with your actual endpoint and key
-         const ZIPPER_API_URL = 'https://your-endpoint.zipper.run/api';
-         const ZIPPER_API_KEY = 'YOUR_API_KEY';
-      ============================================================ */
-      const ZIPPER_API_URL = 'YOUR_ZIPPER_API_URL_HERE';
-      const ZIPPER_API_KEY = 'YOUR_ZIPPER_API_KEY_HERE';
+      // Zapier Webhook — receives form data and notifies the US sales team
+      const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24144716/4ol44q8/';
 
-      if (ZIPPER_API_URL !== 'YOUR_ZIPPER_API_URL_HERE') {
-        await fetch(ZIPPER_API_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + ZIPPER_API_KEY
-          },
-          body: JSON.stringify(data)
-        });
-      }
+      await fetch(ZAPIER_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     } catch (err) {
-      console.error('Zipper API error:', err);
+      console.error('Zapier Webhook error:', err);
     }
 
     document.getElementById('mainForm').style.display = 'none';

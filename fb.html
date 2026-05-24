@@ -444,14 +444,11 @@
         const ZIPPER_API_KEY = 'YOUR_ZIPPER_API_KEY_HERE';
 
         if (ZIPPER_API_URL !== 'YOUR_ZIPPER_API_URL_HERE') {
-          await fetch(ZIPPER_API_URL, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + ZIPPER_API_KEY
-            },
-            body: JSON.stringify(data)
-          });
+          await fetch(ZAPIER_WEBHOOK_URL, {
+method: 'POST',
+headers: { 'Content-Type': 'text/plain' },
+body: JSON.stringify(data)
+});
         }
 
         document.getElementById('fbForm').style.display = 'none';

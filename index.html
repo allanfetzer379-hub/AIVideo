@@ -1479,10 +1479,10 @@
       const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24144716/4ol44q8/';
 
       await fetch(ZAPIER_WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
+method: 'POST',
+headers: { 'Content-Type': 'text/plain' },
+body: JSON.stringify(data)
+});
     } catch (err) {
       console.error('Zapier Webhook error:', err);
     }

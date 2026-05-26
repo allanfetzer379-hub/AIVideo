@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     /* ============================================================
-       CreativeForge — Official Website
+       AIVideoMart — Official Website
        Design: Precision Machine — Deep Navy + Electric Blue
        Fonts: Syne (display) + Manrope (body)
        Sections: Hero / Pain Points / What We Do / Why Us /
@@ -455,29 +455,93 @@
     /* ============================================================
        DEMO / SAMPLE VIDEOS
     ============================================================ */
+    /* Demo video carousel */
     #demo { background: var(--bg); }
-    .demo-placeholder {
+    .demo-carousel-wrap {
+      position: relative;
+      overflow: hidden;
+      padding: 0 0 40px;
+    }
+    .demo-carousel-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.45s cubic-bezier(0.23,1,0.32,1);
+      will-change: transform;
+    }
+    .demo-video-card {
+      flex: 0 0 220px;
       background: var(--card);
-      border: 2px dashed rgba(255,255,255,0.1);
-      border-radius: 16px; padding: 64px 32px;
-      text-align: center;
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .demo-placeholder-icon { font-size: 3rem; margin-bottom: 16px; opacity: 0.4; }
-    .demo-placeholder h3 { font-size: 1.1rem; color: var(--text-sec); font-weight: 600; margin-bottom: 8px; }
-    .demo-placeholder p { font-size: 0.875rem; color: var(--text-dim); }
-    .demo-categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 40px; }
-    .demo-cat {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid var(--border); border-radius: 10px;
-      padding: 16px; text-align: center;
+    .demo-video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(37,99,235,0.18);
     }
-    .demo-cat-tag {
-      display: inline-block; margin-bottom: 8px;
-      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    .demo-video-wrapper {
+      position: relative;
+      width: 220px;
+      height: 391px; /* 9:16 ratio */
+      background: #000;
+    }
+    .demo-video-wrapper video {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .demo-play-btn {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 52px; height: 52px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5);
+      display: flex; align-items: center; justify-content: center;
+      transition: opacity 0.2s, background 0.2s;
+      pointer-events: none;
+    }
+    .demo-play-btn svg { width:20px; height:20px; fill:#fff; margin-left:3px; }
+    .demo-video-card.playing .demo-play-btn { opacity: 0; }
+    .demo-video-card:hover .demo-play-btn { background: rgba(37,99,235,0.5); }
+    .demo-video-info {
+      padding: 14px 16px 16px;
+    }
+    .demo-video-tag {
+      display: inline-block; margin-bottom: 6px;
+      font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
       color: var(--blue); background: var(--blue-dim);
       border-radius: 4px; padding: 3px 8px;
     }
-    .demo-cat h4 { font-size: 0.8375rem; color: var(--text-sec); font-weight: 600; }
+    .demo-video-title {
+      font-size: 0.8rem; font-weight: 600;
+      color: var(--text-sec); line-height: 1.35;
+    }
+    .demo-nav {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-top: 28px;
+    }
+    .demo-nav-btn {
+      width: 40px; height: 40px;
+      background: var(--card); border: 1px solid var(--card-border);
+      border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-sec); font-size: 1rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .demo-nav-btn:hover { background: var(--blue-dim); border-color: var(--blue); color: var(--blue); }
+    .demo-nav-dots { display: flex; gap: 6px; }
+    .demo-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--border); transition: background 0.2s, width 0.2s;
+      cursor: pointer;
+    }
+    .demo-dot.active { background: var(--blue); width: 18px; border-radius: 3px; }
 
     /* ============================================================
        USE CASES
@@ -683,7 +747,7 @@
   <div class="nav-inner">
     <a href="#" class="nav-logo">
       <div class="nav-logo-dot"></div>
-      CreativeForge
+      AIVideoMart
     </a>
     <div class="nav-links">
       <a href="#how">How It Works</a>
@@ -720,7 +784,7 @@
       <div class="hero-tags">
         <div class="hero-tag"><span class="hero-tag-icon">✓</span> White-label delivery</div>
         <div class="hero-tag"><span class="hero-tag-icon">✓</span> 100% copyright cleared</div>
-        <div class="hero-tag"><span class="hero-tag-icon">✓</span> 24–48h turnaround</div>
+        <div class="hero-tag"><span class="hero-tag-icon">✓</span> 48h turnaround</div>
         <div class="hero-tag"><span class="hero-tag-icon">✓</span> Agency-friendly pricing</div>
       </div>
       <div class="hero-btns">
@@ -733,7 +797,7 @@
           <div class="hero-stat-label">US Agencies Served</div>
         </div>
         <div>
-          <div class="hero-stat-num">24h</div>
+          <div class="hero-stat-num">48h</div>
           <div class="hero-stat-label">Max Turnaround</div>
         </div>
         <div>
@@ -974,10 +1038,10 @@
       </div>
     </div>
     <div class="workflow-showcase fade-up">
-      <img src="workflow_icon.png" alt="CreativeForge workflow — Submit Brief, AI + Human Production, Receive &amp; Launch" />
+      <img src="workflow_icon.png" alt="AIVideoMart workflow — Submit Brief, AI + Human Production, Receive &amp; Launch" />
     </div>
     <div class="timeline-wrap fade-up">
-      <div class="timeline-label">24-Hour Production Cycle</div>
+      <div class="timeline-label">48-Hour Production Cycle</div>
       <div class="timeline-row">
         <div class="timeline-item">
           <div class="timeline-time">5:00 PM EST</div>
@@ -986,7 +1050,7 @@
         <div class="timeline-arrow">——→</div>
         <div class="timeline-item">
           <div class="timeline-time">~7:00 PM EST</div>
-          <div class="timeline-event">Production begins in China</div>
+          <div class="timeline-event">Production begins immediately</div>
         </div>
         <div class="timeline-arrow">——→</div>
         <div class="timeline-item">
@@ -1062,36 +1126,89 @@
       <h2>See what we produce</h2>
       <p>Real-world video styles across industries — built to look like client projects, not AI demos.</p>
     </div>
-    <div class="demo-placeholder fade-up">
-      <div class="demo-placeholder-icon">🎬</div>
-      <h3>Sample videos coming soon</h3>
-      <p>We are finalizing our demo reel. Check back shortly, or request a free sample tailored to your client's industry.</p>
-    </div>
-    <div class="demo-categories fade-up">
-      <div class="demo-cat">
-        <div class="demo-cat-tag">Local Lead Gen</div>
-        <h4>Home Services / HVAC Ad</h4>
-      </div>
-      <div class="demo-cat">
-        <div class="demo-cat-tag">Product Video</div>
-        <h4>E-commerce Product Ad</h4>
-      </div>
-      <div class="demo-cat">
-        <div class="demo-cat-tag">High-Ticket Service</div>
-        <h4>Med Spa / Aesthetic Clinic</h4>
-      </div>
-      <div class="demo-cat">
-        <div class="demo-cat-tag">Product Education</div>
-        <h4>SaaS Product Explainer</h4>
-      </div>
-      <div class="demo-cat">
-        <div class="demo-cat-tag">Event Promo</div>
-        <h4>Trade Show / Exhibition</h4>
-      </div>
-      <div class="demo-cat">
-        <div class="demo-cat-tag">AI Capability</div>
-        <h4>AI Face Swap / Spokesperson</h4>
-      </div>
+    <div class="demo-carousel-wrap fade-up">
+      <div class="demo-carousel-track" id="demoTrack">
+
+        <!-- Demo 1 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/jiaobanji.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">Product Video</div>
+            <div class="demo-video-title">Portable Blender Ad</div>
+          </div>
+        </div>
+
+        <!-- Demo 2 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/jiatingfuwu.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">Local Lead Gen</div>
+            <div class="demo-video-title">HVAC Home Services Ad</div>
+          </div>
+        </div>
+
+        <!-- Demo 3 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/yimeizhensuo.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">High-Ticket Service</div>
+            <div class="demo-video-title">Med Spa Clinic Promo</div>
+          </div>
+        </div>
+
+        <!-- Demo 4 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/Home%20and%20Garden%20Show.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">Event Promo</div>
+            <div class="demo-video-title">Home &amp; Garden Show</div>
+          </div>
+        </div>
+
+        <!-- Demo 5 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/SaaS.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">SaaS / Tech</div>
+            <div class="demo-video-title">SaaS 15s Vertical Ad</div>
+          </div>
+        </div>
+
+        <!-- Demo 6 -->
+        <div class="demo-video-card" onclick="toggleVideo(this)">
+          <div class="demo-video-wrapper">
+            <video src="https://dailytw.store/AIdaiyan.mp4" playsinline loop preload="metadata"></video>
+            <div class="demo-play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="demo-video-info">
+            <div class="demo-video-tag">AI Capability</div>
+            <div class="demo-video-title">AI Spokesperson Demo</div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /carousel-wrap -->
+
+    <!-- Navigation -->
+    <div class="demo-nav fade-up">
+      <button class="demo-nav-btn" id="demoPrev" onclick="demoSlide(-1)">‹</button>
+      <div class="demo-nav-dots" id="demoDots"></div>
+      <button class="demo-nav-btn" id="demoNext" onclick="demoSlide(1)">›</button>
     </div>
   </div>
 </section>
@@ -1149,7 +1266,7 @@
       <div class="pricing-compare-item">
         <div class="pricing-compare-label">Our Starter Plan</div>
         <div class="pricing-compare-val green">$699 / month</div>
-        <div class="pricing-compare-note">10 videos · 24–48h turnaround · white-label</div>
+        <div class="pricing-compare-note">10 videos · 48h turnaround · white-label</div>
       </div>
     </div>
 
@@ -1374,7 +1491,7 @@
       <div style="text-align:center;margin-bottom:32px;">
         <div class="section-label" style="margin:0 auto 12px;">Contact Us</div>
         <h2 style="font-size:1.6rem;">Get your free sample videos</h2>
-        <p style="font-size:0.9rem;">Fill in your details and we'll reach out within 2 business hours.</p>
+        <p style="font-size:0.9rem;">Fill in your details and we'll reach out within 24 hours.</p>
       </div>
       <form id="mainForm" onsubmit="handleSubmit(event)"
         style="background:var(--card);border:1px solid var(--card-border);border-radius:18px;padding:36px;">
@@ -1409,12 +1526,12 @@
           <span id="mainSubmitText">Get My Free Sample Videos →</span>
           <span id="mainSpinner" style="display:none;width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);border-top-color:#fff;animation:spin 0.7s linear infinite;"></span>
         </button>
-        <p style="text-align:center;font-size:0.7rem;color:var(--text-dim);margin-top:10px;">No spam. No credit card. Response within 2 business hours.</p>
+        <p style="text-align:center;font-size:0.7rem;color:var(--text-dim);margin-top:10px;">No spam. No credit card. Response within 24 hours.</p>
       </form>
       <div id="mainSuccess" style="display:none;text-align:center;padding:48px 32px;background:var(--card);border:1px solid var(--card-border);border-radius:18px;">
         <div style="font-size:3rem;margin-bottom:16px;">✅</div>
         <h3 style="font-size:1.3rem;margin-bottom:10px;">You're in!</h3>
-        <p style="font-size:0.9rem;color:var(--text-sec);">We'll reach out within 2 business hours to set up your brief and get your free sample videos started.</p>
+        <p style="font-size:0.9rem;color:var(--text-sec);">We'll reach out within 24 hours to set up your brief and get your free sample videos started.</p>
       </div>
     </div>
   </div>
@@ -1425,12 +1542,12 @@
 ============================================================ -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">
+    <div class="footer-logo" style="display:none;">
       <div style="width:8px;height:8px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);"></div>
-      CreativeForge
+      AIVideoMart
     </div>
     <p class="footer-note">
-      © 2026 CreativeForge. All AI-generated content is commercially licensed and copyright-cleared for US use.<br>
+      © 2026 AIVideoMart. All AI-generated content is commercially licensed and copyright-cleared for US use.<br>
       White-label AI video production for digital marketing, paid social, and social media agencies.
     </p>
   </div>
@@ -1466,7 +1583,7 @@
       email:        document.getElementById('m_email').value.trim(),
       company:      document.getElementById('m_company').value.trim(),
       notes:        document.getElementById('m_notes').value.trim(),
-      source:       'CreativeForge Official Website',
+      source:       'AIVideoMart Official Website',
       submitted_at: new Date().toISOString()
     };
 
@@ -1479,16 +1596,93 @@
       const ZAPIER_WEBHOOK_URL = 'https://hooks.zapier.com/hooks/catch/24144716/4ol44q8/';
 
       await fetch(ZAPIER_WEBHOOK_URL, {
-method: 'POST',
-headers: { 'Content-Type': 'text/plain' },
-body: JSON.stringify(data)
-});
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
     } catch (err) {
       console.error('Zapier Webhook error:', err);
     }
 
     document.getElementById('mainForm').style.display = 'none';
     document.getElementById('mainSuccess').style.display = 'block';
+  }
+
+  /* ---- Demo carousel ---- */
+  (function() {
+    const track   = document.getElementById('demoTrack');
+    const dotsWrap = document.getElementById('demoDots');
+    const cards   = track ? track.querySelectorAll('.demo-video-card') : [];
+    const total   = cards.length;
+    let current   = 0;
+    let cardWidth = 0;
+    let visible   = 1;
+
+    function getVisible() {
+      const w = window.innerWidth;
+      if (w >= 1100) return 4;
+      if (w >= 800)  return 3;
+      if (w >= 560)  return 2;
+      return 1;
+    }
+
+    function buildDots() {
+      if (!dotsWrap) return;
+      dotsWrap.innerHTML = '';
+      const pages = Math.ceil(total / visible);
+      for (let i = 0; i < pages; i++) {
+        const d = document.createElement('div');
+        d.className = 'demo-dot' + (i === 0 ? ' active' : '');
+        d.onclick = () => goTo(i * visible);
+        dotsWrap.appendChild(d);
+      }
+    }
+
+    function updateDots() {
+      if (!dotsWrap) return;
+      const dots = dotsWrap.querySelectorAll('.demo-dot');
+      const page = Math.floor(current / visible);
+      dots.forEach((d, i) => d.classList.toggle('active', i === page));
+    }
+
+    function goTo(idx) {
+      if (!track) return;
+      current = Math.max(0, Math.min(idx, total - visible));
+      const gap = 20;
+      cardWidth = cards[0] ? cards[0].offsetWidth : 220;
+      track.style.transform = `translateX(-${current * (cardWidth + gap)}px)`;
+      updateDots();
+    }
+
+    window.demoSlide = function(dir) {
+      goTo(current + dir * visible);
+    };
+
+    function init() {
+      visible = getVisible();
+      buildDots();
+      goTo(0);
+    }
+
+    window.addEventListener('resize', () => { visible = getVisible(); buildDots(); goTo(0); });
+    init();
+  })();
+
+  /* ---- Video play/pause toggle ---- */
+  function toggleVideo(card) {
+    const video = card.querySelector('video');
+    if (!video) return;
+    if (video.paused) {
+      // pause all others
+      document.querySelectorAll('.demo-video-card video').forEach(v => {
+        if (v !== video) { v.pause(); v.closest('.demo-video-card').classList.remove('playing'); }
+      });
+      video.play();
+      card.classList.add('playing');
+    } else {
+      video.pause();
+      card.classList.remove('playing');
+    }
   }
 </script>
 
